@@ -1,24 +1,36 @@
-### Pull Request check-list
+<!--
+Thank you for submitting a pull request to Node.js. Before you submit, please
+review below requirements and tick the boxes (using the letter “x”) under
+‘Checklist’. If a box doesn’t apply to you, leave it unchecked.
 
-_Please make sure to review and check all of these items:_
+You can run the test suite by invoking: `make -j4 lint test` on linux or
+`vcbuild test nosign` on Windows.
 
-- [ ] Does `make -j8 test` (UNIX) or `vcbuild test nosign` (Windows) pass with
-  this change (including linting)?
-- [ ] Is the commit message formatted according to [CONTRIBUTING.md][0]?
-- [ ] If this change fixes a bug (or a performance problem), is a regression
-  test (or a benchmark) included?
-- [ ] Is a documentation update included (if this change modifies
-  existing APIs, or introduces new ones)?
+If this aims to fix a regression or you’re adding a feature, make sure you also
+write a test. Also – if possible – a benchmark that quantifies your changes is
+also appreciated.
 
-_NOTE: these things are not required to open a PR and can be done
-afterwards / while the PR is open._
+Finally, read through our contributors guide and make adjustments as necessary:
+https://github.com/nodejs/node/blob/master/CONTRIBUTING.md
+-->
 
-### Affected core subsystem(s)
+##### Checklist
 
-_Please provide affected core subsystem(s) (like buffer, cluster, crypto, etc)_
+- [ ] tests and code linting passes
+- [ ] a test and/or benchmark is included
+- [ ] documentation is changed or added
+- [ ] the commit message follows commit guidelines
 
-[0]: https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#step-3-commit
 
-### Description of change
+##### Affected core subsystem(s)
 
-_Please provide a description of the change here._
+<!--
+Please provide affected core subsystem(s) (like buffer, cluster, crypto, etc)
+below this comment.
+-->
+
+##### Description of change
+
+<!--
+Provide a description of the change here below this comment.
+-->
