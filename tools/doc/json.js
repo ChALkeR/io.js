@@ -91,10 +91,8 @@ function doJSON(input, filename, cb) {
     // here and the next heading should be parsed as the desc.
     var stability;
     if (state === 'AFTERHEADING') {
-      if (type === 'code' &&
-          (stability = text.match(/^Stability: ([0-5])(?:\s*-\s*)?(.*)$/))) {
-        current.stability = parseInt(stability[1], 10);
-        current.stabilityText = stability[2].trim();
+      if (type === 'blockquote_start') {
+        state = 'AFTERHEADING_BLOCKQUOTE';
         return;
       } else if (type === 'list_start' && !tok.ordered) {
         state = 'AFTERHEADING_LIST';
@@ -127,6 +125,20 @@ function doJSON(input, filename, cb) {
         processList(current);
       }
       return;
+    }
+
+    if (state === 'AFTERHEADING_BLOCKQUOTE') {
+      if (type === 'blockquote_end') {
+        state = 'AFTERHEADING';
+        return;
+      }
+
+      if (type === 'paragraph' &&
+          (stability = text.match(/^Stability: ([0-5])(?:\s*-\s*)?(.*)$/))) {
+        current.stability = parseInt(stability[1], 10);
+        current.stabilityText = stability[2].trim();
+        return;
+      }
     }
 
     current.desc = current.desc || [];

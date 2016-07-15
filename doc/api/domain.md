@@ -1,6 +1,6 @@
 # Domain
 
-    Stability: 0 - Deprecated
+> Stability: 0 - Deprecated
 
 **This module is pending deprecation**. Once a replacement API has been
 finalized, this module will be fully deprecated. Most end users should
@@ -436,7 +436,7 @@ without exiting the domain.
 
 ### domain.dispose()
 
-    Stability: 0 - Deprecated.  Please recover from failed IO actions
+> Stability: 0 - Deprecated.  Please recover from failed IO actions
     explicitly via error event handlers set on the domain.
 
 Once `dispose` has been called, the domain will no longer be used by callbacks

@@ -1,6 +1,6 @@
 # Buffer
 
-    Stability: 2 - Stable
+> Stability: 2 - Stable
 
 Prior to the introduction of `TypedArray` in ECMAScript 2015 (ES6), the
 JavaScript language had no mechanism for reading or manipulating streams
@@ -277,8 +277,8 @@ It can be constructed in a variety of ways.
 deprecated: v6.0.0
 -->
 
-    Stability: 0 - Deprecated: Use [`Buffer.from(array)`][buffer_from_array]
-    instead.
+> Stability: 0 - Deprecated: Use [`Buffer.from(array)`][buffer_from_array]
+> instead.
 
 * `array` {Array}
 
@@ -295,8 +295,8 @@ const buf = new Buffer([0x62,0x75,0x66,0x66,0x65,0x72]);
 deprecated: v6.0.0
 -->
 
-    Stability: 0 - Deprecated: Use [`Buffer.from(buffer)`][buffer_from_buffer]
-    instead.
+> Stability: 0 - Deprecated: Use [`Buffer.from(buffer)`][buffer_from_buffer]
+> instead.
 
 * `buffer` {Buffer}
 
@@ -318,9 +318,9 @@ console.log(buf2.toString());
 deprecated: v6.0.0
 -->
 
-    Stability: 0 - Deprecated: Use
-    [`Buffer.from(arrayBuffer[, byteOffset [, length]])`][buffer_from_arraybuf]
-    instead.
+> Stability: 0 - Deprecated: Use
+> [`Buffer.from(arrayBuffer[, byteOffset [, length]])`][buffer_from_arraybuf]
+> instead.
 
 * `arrayBuffer` {ArrayBuffer} The `.buffer` property of a `TypedArray` or a
   `new ArrayBuffer()`
@@ -356,9 +356,9 @@ console.log(buf);
 deprecated: v6.0.0
 -->
 
-    Stability: 0 - Deprecated: Use
-    [`Buffer.alloc(size[, fill[, encoding]])`][buffer_alloc] instead (also
-    see [`Buffer.allocUnsafe(size)`][buffer_allocunsafe]).
+> Stability: 0 - Deprecated: Use
+> [`Buffer.alloc(size[, fill[, encoding]])`][buffer_alloc] instead (also
+> see [`Buffer.allocUnsafe(size)`][buffer_allocunsafe]).
 
 * `size` {Number}
 
@@ -388,8 +388,8 @@ console.log(buf);
 deprecated: v6.0.0
 -->
 
-    Stability: 0 - Deprecated:
-    Use [`Buffer.from(str[, encoding])`][buffer_from_string] instead.
+> Stability: 0 - Deprecated:
+> Use [`Buffer.from(str[, encoding])`][buffer_from_string] instead.
 
 * `str` {String} string to encode.
 * `encoding` {String} Default: `'utf8'`
@@ -1954,8 +1954,8 @@ Note that this is a property on the `buffer` module as returned by
 deprecated: v6.0.0
 -->
 
-    Stability: 0 - Deprecated: Use
-    [`Buffer.allocUnsafeSlow(size)`][buffer_allocunsafeslow] instead.
+> Stability: 0 - Deprecated: Use
+> [`Buffer.allocUnsafeSlow(size)`][buffer_allocunsafeslow] instead.
 
 Returns an un-pooled `Buffer`.
 
@@ -1990,8 +1990,8 @@ has observed undue memory retention in their applications.
 deprecated: v6.0.0
 -->
 
-    Stability: 0 - Deprecated: Use
-    [`Buffer.allocUnsafeSlow(size)`][buffer_allocunsafeslow] instead.
+> Stability: 0 - Deprecated: Use
+> [`Buffer.allocUnsafeSlow(size)`][buffer_allocunsafeslow] instead.
 
 * `size` Number
 
