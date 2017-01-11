@@ -1,4 +1,4 @@
-# Node.js v5 ChangeLog
+# Node.js v5 Changelog
 
 <table>
 <tr>

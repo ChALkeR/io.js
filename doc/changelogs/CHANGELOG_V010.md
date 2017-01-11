@@ -1,4 +1,4 @@
-# Node.js v0.10 ChangeLog
+# Node.js v0.10 Changelog
 
 <table>
 <tr>

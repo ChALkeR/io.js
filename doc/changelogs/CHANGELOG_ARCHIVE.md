@@ -1,4 +1,4 @@
-# Node.js ChangeLog Archive
+# Node.js Changelog Archive
 
 <table>
 <tr>

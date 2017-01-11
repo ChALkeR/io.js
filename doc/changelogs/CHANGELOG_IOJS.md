@@ -1,4 +1,4 @@
-# io.js ChangeLog
+# io.js Changelog
 
 <table>
 <tr>
