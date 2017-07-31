@@ -34,6 +34,24 @@ using v8::Local;
 using v8::String;
 using v8::Value;
 
+size_t allocatedBuffers = 0;
+
+void registerBuffers(size_t size) {
+  allocatedBuffers += size;
+  //fprintf(stderr, "XXX %lld\n", allocatedBuffers);
+  cleanupBuffers(Isolate::GetCurrent());
+}
+
+void cleanupBuffers(Isolate* isolate) {
+  //fprintf(stderr, "YYY %lld\n", allocatedBuffers);
+  if (allocatedBuffers >= 30000000) { // 30 MB
+    isolate->RequestGarbageCollectionForTesting(
+      Isolate::kMinorGarbageCollection
+    );
+    allocatedBuffers = 0;
+  }
+}
+
 template <typename T>
 static void MakeUtf8String(Isolate* isolate,
                            Local<Value> value,
