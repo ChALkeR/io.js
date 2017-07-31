@@ -43,6 +43,9 @@
 
 namespace node {
 
+void registerBuffers(size_t size);
+void cleanupBuffers(v8::Isolate* isolate);
+
 // These should be used in our code as opposed to the native
 // versions as they abstract out some platform and or
 // compiler version specific functionality

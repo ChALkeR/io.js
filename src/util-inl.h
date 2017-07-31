@@ -25,6 +25,7 @@
 #if defined(NODE_WANT_INTERNALS) && NODE_WANT_INTERNALS
 
 #include <cstring>
+#include "malloc.h"
 #include "util.h"
 
 #if defined(_MSC_VER)
@@ -320,6 +321,7 @@ T* UncheckedRealloc(T* pointer, size_t n) {
     return nullptr;
   }
 
+  registerBuffers(full_size - malloc_usable_size(pointer));
   void* allocated = realloc(pointer, full_size);
 
   if (UNLIKELY(allocated == nullptr)) {
@@ -342,6 +344,7 @@ template <typename T>
 inline T* UncheckedCalloc(size_t n) {
   if (n == 0) n = 1;
   MultiplyWithOverflowCheck(sizeof(T), n);
+  registerBuffers(n);
   return static_cast<T*>(calloc(n, sizeof(T)));
 }
 

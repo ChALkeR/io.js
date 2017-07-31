@@ -34,6 +34,24 @@ using v8::Local;
 using v8::String;
 using v8::Value;
 
+size_t allocatedDelta = 0;
+
+void registerBuffers(size_t size) {
+  allocatedDelta += size;
+  //fprintf(stderr, "XXX %lld\n", allocatedDelta);
+  cleanupBuffers(Isolate::GetCurrent());
+}
+
+void cleanupBuffers(Isolate* isolate) {
+  //fprintf(stderr, "YYY %lld\n", allocatedDelta);
+  if (allocatedDelta >= 20000000) { // 20 MB
+    isolate->RequestGarbageCollectionForTesting(
+      Isolate::kMinorGarbageCollection
+    );
+    allocatedDelta = 0;
+  }
+}
+
 template <typename T>
 static void MakeUtf8String(Isolate* isolate,
                            Local<Value> value,
