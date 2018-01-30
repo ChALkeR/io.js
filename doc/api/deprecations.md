@@ -296,7 +296,7 @@ instead.
 <a id="DEP0030"></a>
 ### DEP0030: SlowBuffer
 
-Type: Documentation-only
+Type: Documentation-only (supports [`--pending-deprecation`][])
 
 The [`SlowBuffer`][] class has been deprecated. Please use
 [`Buffer.allocUnsafeSlow(size)`][] instead.
